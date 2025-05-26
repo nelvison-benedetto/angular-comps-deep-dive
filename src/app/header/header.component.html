@@ -12,14 +12,17 @@
         <a href="/">Management</a>
       </li>
       <li>
-        <button>
-          <span>
+
+        <!--use of Attribute Selector!!-->
+        <button appButton>
+          <span ngProjectAs="[buttonText]" class="me-2">  <!--ngContent is new, better than use select=[]-->
             Logout
           </span>
-          <span class="icon">
-            →
+          <span buttonIcon>
+            <i class="bi bi-arrow-right-circle-fill"></i>
           </span>
         </button>
+
       </li>
     </ul>
   </nav>

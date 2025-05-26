@@ -1,0 +1,24 @@
+<form> <!--(ngSubmit)="onSubmit()"-->
+
+  <app-control [labelFieldForm]="'Title'" class="form-group mb-2">   <!--labelFieldForm="Title" is without typescript-->
+    <!-- <label for="title" class="form-label">Title</label> -->
+    <input type="text" name="title" id="title" class="form-control">
+  </app-control>
+
+  <app-control [labelFieldForm]="'Request'" class="form-group mb-2">
+    <!-- <label for="request" class="form-label">Request</label> -->
+    <textarea type="text" rows="4" name="request" id="request" class="form-control"></textarea>
+  </app-control>
+
+
+  <!--use of Attribute Selector!!-->
+  <button appButton class="mt-2">
+    <span ngProjectAs="[buttonText]" class="me-2">
+      Submit
+    </span>
+    <span buttonIcon>
+      <i class="bi bi-arrow-right-circle-fill"></i>
+    </span>
+  </button>
+
+</form>

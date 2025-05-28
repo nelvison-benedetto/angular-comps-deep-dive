@@ -1,13 +1,13 @@
-<form (ngSubmit)="onSubmit(titleTemplateVar.value, requestTemplateVar.value)"> <!--send the 2 variables at the submit-->
+<form (ngSubmit)="onSubmit(titleTemplateVar.value, requestTemplateVar.value, form)" #form> <!--send the 2 variables at the submit-->
 
   <app-control [labelFieldForm]="'Title'" class="form-group mb-2">   <!--labelFieldForm="Title" is without typescript-->
     <!-- <label for="title" class="form-label">Title</label> -->
-    <input type="text" name="title" id="title" class="form-control" #titleTemplateVar> <!--value input transformated in variable-->
+    <input type="text" name="title" id="title" class="form-control" #titleTemplateVar #input> <!--value input transformated in variable-->
   </app-control>
 
   <app-control [labelFieldForm]="'Request'" class="form-group mb-2">
     <!-- <label for="request" class="form-label">Request</label> -->
-    <textarea type="text" rows="4" name="request" id="request" class="form-control" #requestTemplateVar></textarea>
+    <textarea type="text" rows="4" name="request" id="request" class="form-control" #requestTemplateVar #input></textarea>
   </app-control>
 
 

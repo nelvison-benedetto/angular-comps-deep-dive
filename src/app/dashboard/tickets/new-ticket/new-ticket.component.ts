@@ -10,4 +10,12 @@ import { ControlComponent } from "../../../shared/control/control.component";
 })
 export class NewTicketComponent {
 
+  onSubmit(titleTemplateVar : string, requestTemplateVar : string){
+    //in this case the 2 variables in the form are wrapped in another comp, so AngulartemplateVar doesn't work here
+    console.log("xxxx");
+    //console.dir(titleTemplateVar);
+    console.log("entered title: "+titleTemplateVar);
+    console.log("entered request: "+requestTemplateVar);
+  }
+
 }

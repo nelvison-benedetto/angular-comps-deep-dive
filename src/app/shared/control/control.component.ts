@@ -13,6 +13,7 @@ export class ControlComponent {
 
   //@ContentChild('input') private control?: ElementRef<HTMLInputElement | HTMLTextAreaElement>;
   private control = contentChild.required<ElementRef<HTMLInputElement | HTMLTextAreaElement>>('input'); //new version, introduced x A17+,x accedere ad elemens proiettati(possono essere elementi di origine esterna) nel template di questo comp
-  valueOfInput = this.control().nativeElement.value;
+
+  //valueOfInput = this.control().nativeElement.value;
 
 }

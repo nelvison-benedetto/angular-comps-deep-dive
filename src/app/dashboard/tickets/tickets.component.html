@@ -1,3 +1,15 @@
-<div id="new-ricket">
-  <app-new-ticket></app-new-ticket>
+<div>
+  <ul>
+    @for(ticket of tickets; track ticket.id) {
+      <li>
+        <app-ticket [data]="ticket" (close)="onCloseTicket(ticket.id)"></app-ticket> - {{$index}}
+      </li> <!-- template vars context within a @for: index(return index of this el)/first(boolen)/last/even/odd/count/.. li puoi usare x conditions ect-->
+    } @empty{
+      <p>No tickets avaible.</p>
+    }
+  </ul>
+</div>
+
+<div id="new-ticket">
+  <app-new-ticket (add)="onAdd($event)"></app-new-ticket>
 </div>

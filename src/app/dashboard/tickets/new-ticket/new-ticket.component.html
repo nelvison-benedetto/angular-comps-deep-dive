@@ -1,5 +1,6 @@
 <form (ngSubmit)="onSubmit(titleTemplateVar.value, requestTemplateVar.value, form)" #form> <!--send the 2 variables at the submit-->
-   <!--quando si verifica il submit, execute custom onSubmit()-->
+    <!--titleTemplateVar.value prende il value della template var #titleTemplateVar-->
+  <!--quando si verifica il submit, execute custom onSubmit()-->
   <app-control [labelFieldForm]="'Title'" class="form-group mb-2">   <!--labelFieldForm="Title" is without typescript, non passi al figlio uan var presente nel .ts ma proprio la string 'Title'-->
     <!-- <label for="title" class="form-label">Title</label> -->
     <input type="text" name="title" id="title" class="form-control" #titleTemplateVar #input> <!--value input transformated in variable-->
@@ -11,14 +12,18 @@
   </app-control>
 
 
-  <!--use of Attribute Selector!!-->
-  <button appButton class="mt-2" type="submit" #btn>
-    <span ngProjectAs="[buttonText]" class="me-2">
+  <!--how pass datas to children per farglieli mangiare-->
+  <button appButton class="mt-2" type="submit" #btn> <!--appButton is ButtonComponent-->
+    <!--NON IMPORTA L'ORDINE HERE DEGLI ELEMS FATHER-SIDE, tanto nel figlio ButtonComponent nel template sono vengono ordinati!!-->
+
+    <span ngProjectAs="[buttonText]" class="me-2">  <!--couple linked ngProjectAs(father)-ngContentAs(children)  NEW BETTER WAY -->
       Submit
     </span>
-    <span buttonIcon>
+
+    <span buttonIcon> <!--OLD WAY, il children usa select="[buttonIcon]" per ottenere il l'intero elem <span> e mangiarlo-->
       <i class="bi bi-arrow-right-circle-fill"></i>
     </span>
+
   </button>
 
 </form>

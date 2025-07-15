@@ -21,5 +21,4 @@ export class HeaderComponent {
     console.log("this element of the DOM:" + this.el);
   }
 
-
 }

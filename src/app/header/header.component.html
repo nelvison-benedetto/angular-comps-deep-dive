@@ -15,12 +15,16 @@
 
         <!--use of Attribute Selector!!-->
         <button appButton>
-          <span ngProjectAs="[buttonText]" class="me-2">  <!--ngContent is new, better than use select=[]-->
+          <!--HERE IT'S NOT IMPORTANT THE ORDER OF THE ELEMENS!!-->
+
+          <span ngProjectAs="[buttonText]" class="me-2">  <!--NEW BETTER WAY!!!-->
             Logout
           </span>
-          <span buttonIcon>
+
+          <span buttonIcon> <!--OLD WAY!!-->
             <i class="bi bi-arrow-right-circle-fill"></i>
           </span>
+
         </button>
 
       </li>

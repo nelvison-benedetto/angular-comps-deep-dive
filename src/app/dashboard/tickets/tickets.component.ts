@@ -13,7 +13,7 @@ import { TicketComponent } from "./ticket/ticket.component";
 export class TicketsComponent {
 
   tickets : Ticket[] = [];  //arrays of type Ticket
-  onAdd(ticketData: {title: string, text: string}){
+  onAdd(ticketData: {title: string, text: string}){  //mandata dal figlio tramite emit of 'add', the childrens send {string,string}
     console.log("WITHIN  ON ADD FUNCT!!");
     const ticket : Ticket = {
       title: ticketData.title,
@@ -21,13 +21,13 @@ export class TicketsComponent {
       id: Math.random().toString(),
       status: 'open'
     };
-    this.tickets.push(ticket);
+    this.tickets.push(ticket);  //add new Ticket created to the array
   };
 
   onCloseTicket(id:string){
     this.tickets = this.tickets.map((ticket)=>{
       if(ticket.id === id){
-        return {...ticket, status: 'closed'};
+        return {...ticket, status: 'closed'}; //clone of ticker then ovveride status with value 'close'
       }
       return ticket;
     });

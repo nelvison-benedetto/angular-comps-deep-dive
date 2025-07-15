@@ -1,11 +1,11 @@
 <form (ngSubmit)="onSubmit(titleTemplateVar.value, requestTemplateVar.value, form)" #form> <!--send the 2 variables at the submit-->
-
-  <app-control [labelFieldForm]="'Title'" class="form-group mb-2">   <!--labelFieldForm="Title" is without typescript-->
+   <!--quando si verifica il submit, execute custom onSubmit()-->
+  <app-control [labelFieldForm]="'Title'" class="form-group mb-2">   <!--labelFieldForm="Title" is without typescript, non passi al figlio uan var presente nel .ts ma proprio la string 'Title'-->
     <!-- <label for="title" class="form-label">Title</label> -->
     <input type="text" name="title" id="title" class="form-control" #titleTemplateVar #input> <!--value input transformated in variable-->
-  </app-control>
+  </app-control>  <!--#... sono template reference variables che puntano a quegli elementi nella dom -->
 
-  <app-control [labelFieldForm]="'Request'" class="form-group mb-2">
+  <app-control [labelFieldForm]="'Request'" class="form-group mb-2">  <!--crei un'altra istanza di app-control(quindi anche un altro labelFieldForm)-->
     <!-- <label for="request" class="form-label">Request</label> -->
     <textarea type="text" rows="4" name="request" id="request" class="form-control" #requestTemplateVar #input></textarea>
   </app-control>

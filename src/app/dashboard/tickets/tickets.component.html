@@ -1,7 +1,7 @@
 <div>
   <ul>
     @for(ticket of tickets; track ticket.id) {
-      <li>
+      <li> <!--{{$index}} is provided by @for !!-->
         <app-ticket [data]="ticket" (close)="onCloseTicket(ticket.id)"></app-ticket> - {{$index}}
       </li> <!-- template vars context within a @for: index(return index of this el)/first(boolen)/last/even/odd/count/.. li puoi usare x conditions ect-->
     } @empty{
